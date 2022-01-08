@@ -1,10 +1,15 @@
 // alert('hi');
 
-fetch("https://datausa.io/api/data?drilldowns=Nation&measures=Population")
+fetch("https://api.openbrewerydb.org/breweries?by_state=massachusetts&per_page=3")
 .then( (response) => response.json())
 .then((data)=> console.log(data))// output will be the required data
 .catch( (error) => console.log(error))
 
+var result = document.getElementById("demo");
 
+var obj = JSON.parse(data);
+for (var key in obj) {
+    result.innerHTML += "<br/>" + key + ": ";
+}
 
-document.getElementById("demo").innerHTML = data;
+result.innerHTML += "Total = " + obj.total;
