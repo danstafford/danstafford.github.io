@@ -1,4 +1,4 @@
-alert('hi');
+// alert('hi');
 
 fetch("http://dummy.restapiexample.com/api/v1/employees")
 .then( (response) => response.json())
