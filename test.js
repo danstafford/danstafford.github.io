@@ -7,7 +7,7 @@ fetch("https://api.openbrewerydb.org/breweries?by_state=massachusetts&per_page=3
 
 var demo = document.getElementById("demo");
 
-for (const key in res){
+for (const key in data){
   if(obj.hasOwnProperty(key)){
     console.log(`${key} : ${res[key]}`);
     demo.innerHTML += `${key} : ${res[key]}` + "<br>";
