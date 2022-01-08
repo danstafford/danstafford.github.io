@@ -5,11 +5,12 @@ fetch("https://api.openbrewerydb.org/breweries?by_state=massachusetts&per_page=3
 .then((data)=> console.log(data))// output will be the required data
 .catch( (error) => console.log(error))
 
-var result = document.getElementById("demo");
+var demo = document.getElementById("demo");
 
-var obj = JSON.parse(data);
-for (var key in obj) {
-    result.innerHTML += "<br/>" + key + ": ";
+for (const key in res){
+  if(obj.hasOwnProperty(key)){
+    console.log(`${key} : ${res[key]}`);
+    demo.innerHTML += `${key} : ${res[key]}` + "<br>";
+  }
 }
 
-result.innerHTML += "Total = " + obj.total;
