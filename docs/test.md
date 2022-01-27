@@ -26,3 +26,7 @@ var {{ favorite.color }}
 {{ question }}
 {{ answer }}
 
+## Link example
+- [https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-fetch-api-to-get-data](https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-fetch-api-to-get-data)
+
+
