@@ -1,6 +1,6 @@
 # API Tutorials
 
-## [Javascript Fetch API](/javascript-fetch-api)
+### [Javascript Fetch API](/javascript-fetch-api)
 
-## [Curl Article](/curl-article)
+### [Curl Article](/curl-article)
 
