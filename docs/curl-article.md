@@ -1,19 +1,17 @@
 # Using Curl for Testing API Requests
 
 Curl is a popular command-line tool used by software engineers and web developers worldwide.  Its main function is to 
-transfer data to and from a server.  This article provides and example API GET request using curl and suggests a few formatting 
+transfer data to and from a server.  This article provides an example API GET request and suggests a few formatting 
 options for the JSON response. 
 
 ## Why use curl?
 
-There are some great products such as [Postman](https://www.postman.com/) and [Paw](https://paw.cloud/) that provide a
-polished user-interface and a multitude of options for testing API requests.  Both of these products have a lot of great 
-functionality but both require a signup and in the case of Paw, are not free to use.  These products also have a learning curve. For 
-executing a simple API request they may require more of a time investment than is desired.
-
-Using curl to test API requests is fast and straightforward.  And unlike Postman or Paw, there is no cost, signup, or 
-extraneous options.  As a command-line tool, curl allows you to make an API request right from your computer and in a 
-format that can easily can be copied and shared cross-platform.  
+There are many API testing products such as [Postman](https://www.postman.com/), [Swagger](https://inspector.swagger.io/builder), 
+and [Paw](https://paw.cloud/) that are easy to use, are full of options, and feature a clean user-interface. Curl is 
+not a direct replacement for these products, but it is a useful tool that has some advantages. Using curl to 
+test API requests is fast and straightforward.  As a command-line tool, curl allows you to make an API 
+request right from your computer and in a format that can easily can be copied and shared cross-platform. And unlike 
+some API testing products, there is no cost, signup, or extraneous functionality.
 
 ## Prerequisites
 
@@ -32,20 +30,20 @@ curl -V
 ```
 
 After entering this command you should receive an output indicating which version of curl you currently have 
-installed.  If you did not receive the version of curl installed on your system, you may need to install it. Please 
-refer to the curl documentation to get it running on your machine [https://everything.curl.dev/get](https://everything.curl.dev/get) . 
+installed.  If you did not receive a curl version number, please refer to the curl documentation to get it installed and running on 
+your machine [https://everything.curl.dev/get](https://everything.curl.dev/get) . 
 
 ## Create a GET request
 
 Here we will use curl to make a GET request to the [Dictionary API](https://dictionaryapi.dev/). The Dictionary API 
-takes a word as a path parameter and returns a response with the word's definition, synonyms, antonyms, and more.
+takes a word as a path parameter and returns a response with that word's definition, synonyms, antonyms, and more.
 
-This is a Dictionary API endpoint where the path parameter <word> is the english word you are looking up.  
+This is a Dictionary API endpoint where the path parameter <word> is the english word you are requesting the definition for.  
 ```
 https://api.dictionaryapi.dev/api/v2/entries/en/<word>
 ```
 
-We can now use curl to get the definition of the word "quintessence".
+We can now create a curl command to get the definition of the word "quintessence".
 The command begins with `curl`, uses the `--request` option, and specifies that this is an HTTP `GET` request. 
 ```
 curl --request GET https://api.dictionaryapi.dev/api/v2/entries/en/quintessence
@@ -81,7 +79,7 @@ to format the response.
 curl --request GET https://api.dictionaryapi.dev/api/v2/entries/en/quintessence | python -m json.tool
 ```
 
-Finally, there is a JSON command line processor called [jq](https://stedolan.github.io/jq/), which has many formatting options.
+Finally, there is a JSON command line processor called [jq](https://stedolan.github.io/jq/), which requires an installation, but has many formatting options.
 ```
 curl --request GET https://api.dictionaryapi.dev/api/v2/entries/en/quintessence | jq '.'
 ```
@@ -160,7 +158,7 @@ The standard output from all three of these formatting options will look somewha
 
 There are several other curl options that are useful when making API requests.  
 
-- The `--include` option includes the HTTP response headers with the output printed to the console.  This is useful for 
+- The `--include` option includes the HTTP response headers with the output that is printed to the console.  This is useful for 
 receiving the HTTP status code of your request. 
 
 - The `--header` option allows extra headers to be included in the request.
@@ -185,8 +183,8 @@ curl --request POST 'https://example/v2/users' \
 }'
 ```
 
-On the first line of this curl command the `--request` option is used specifies that this is a `POST` request. It
-is followed by the `--include` option which specifies that the results should include the HTTP response headers.
+On the first line of this curl command the `--request` option is used to specify that this is a `POST` request. It
+is followed by the `--include` option which displays the HTTP response headers.
 ```
 curl --request POST 'https://example/v2/users' \
 --include \
@@ -203,7 +201,7 @@ being sent, and the third specifies the data type of the response.
 ...
 ```
 
-The `--data` option includes the JSON data of a user we are creating with this POST request.
+The `--data` option includes the JSON data we are sending with this POST request.
 ```
 ...
 --data '{
@@ -215,17 +213,20 @@ The `--data` option includes the JSON data of a user we are creating with this P
 
 ## Conclusion
 
-There is much more to learn about using curl for testing API Requests.  Please see the [references](#references) below for links to the 
-curl documentation as well as few free APIs that are great to use for learning. 
-
+There is more to learn about using curl for testing API requests not covered here.  Please see the [references](#references) 
+below for links to the curl documentation as well as a small list of free APIs to use for learning. 
 
 ## References
 
 - Curl manual [https://curl.se/docs/manpage.html](https://curl.se/docs/manpage.html)
-- Curl's online book [https://everything.curl.dev/](https://everything.curl.dev/)
+- Everything curl online book [https://everything.curl.dev/](https://everything.curl.dev/)
 - HTTP response status codes [https://developer.mozilla.org/en-US/docs/Web/HTTP/Status](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 - Free APIs
-  - https://swapi.dev/
-  - https://dictionaryapi.dev/
-  - https://openweathermap.org/api
-  
+  - [https://swapi.dev/](https://swapi.dev/)
+  - [https://dictionaryapi.dev/](https://dictionaryapi.dev/)
+  - [https://openweathermap.org/api](https://openweathermap.org/api)
+  - [https://petstore.swagger.io/](https://petstore.swagger.io/)
+- Other API testing tools
+  - [Postman](https://www.postman.com/)
+  - [Swagger Inspector](https://inspector.swagger.io/builder)
+  - [Paw](https://paw.cloud/)
