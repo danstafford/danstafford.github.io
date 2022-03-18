@@ -1,13 +1,13 @@
 # Using Curl for Testing API Requests
 
-Curl is a popular command-line tool used by software engineers and web developers worldwide.  Its main function is to 
-transfer data to and from a server.  This article provides an example API GET request and suggests a few formatting 
-options for the JSON response.
+Curl is a popular command-line tool that is used by software engineers and web developers worldwide.  Its main function is to 
+transfer data to and from a server.  This article provides a brief introduction to curl, an example API request, and 
+suggests a few formatting options for the JSON response.
 
 ## Why use curl?
 
-There are many API testing products such as [Postman](https://www.postman.com/), [Swagger](https://inspector.swagger.io/builder), 
-and [Paw](https://paw.cloud/) that are easy to use, are full of options, and feature a clean user-interface. Curl is 
+There are many API testing products such as [Postman](https://www.postman.com/), [Swagger](https://inspector.swagger.io/builder),
+and [Paw](https://paw.cloud/) that are easy to use, cleanly designed, and are full of features. Curl is 
 not a direct replacement for these products, but it is a useful tool that has some advantages. Using curl to 
 test API requests is fast and straightforward.  As a command-line tool, curl allows you to make an API 
 request right from your computer and in a format that can easily can be copied and shared cross-platform. And unlike 
@@ -35,7 +35,7 @@ your machine [https://everything.curl.dev/get](https://everything.curl.dev/get) 
 
 ## Create a GET request
 
-Here we will use curl to make a GET request to the [Dictionary API](https://dictionaryapi.dev/). The Dictionary API 
+Here we will use curl to make a simple GET request to the [Dictionary API](https://dictionaryapi.dev/). The Dictionary API 
 takes a word as a path parameter and returns a response with that word's definition, synonyms, antonyms, and more.
 
 This is a Dictionary API endpoint where the path parameter <word> is the english word you are requesting the definition for.  
@@ -49,7 +49,7 @@ The command begins with `curl`, uses the `--request` option, and specifies that 
 curl --request GET https://api.dictionaryapi.dev/api/v2/entries/en/quintessence
 ```
 
-The response from the Dictionary API is returned in JSON format.
+The response from the Dictionary API is returned in JSON media type.
 ```
 [{"word":"quintessence","phonetic":"/kwɪn.ˈtɛs.əns/","phonetics":[{"text":"/kwɪn.ˈtɛs.əns/","audio":""}],"meanings":
 [{"partOfSpeech":"noun","definitions":[{"definition":"A thing that is the most perfect example of its type; the most 
@@ -79,7 +79,7 @@ to format the response.
 curl --request GET https://api.dictionaryapi.dev/api/v2/entries/en/quintessence | python -m json.tool
 ```
 
-Finally, there is a JSON command line processor called [jq](https://stedolan.github.io/jq/), which requires an installation, but has many formatting options.
+Finally, there is a JSON command line processor called [jq](https://stedolan.github.io/jq/), which also requires an installation, but has many formatting options.
 ```
 curl --request GET https://api.dictionaryapi.dev/api/v2/entries/en/quintessence | jq '.'
 ```
@@ -163,7 +163,7 @@ receiving the HTTP status code of your request.
 
 - The `--header` option allows extra headers to be included in the request.
 
-- The `--data` option specifies data to be included in the request. When using JSON as the data type make sure to include 
+- The `--data` option specifies data to be included in the request. When using JSON as the media type make sure to include 
 the header `Content-Type: application/json` to indicate this.
 
   
@@ -191,8 +191,8 @@ curl --request POST 'https://example/v2/users' \
 ...
 ```
 
-There are three instances of the `--header` option being used in this command. The first includes an API key, the second specifies JSON as the data type that is 
-being sent, and the third specifies the data type of the response. 
+There are three instances of the `--header` option being used in this command. The first includes an API key, the second specifies JSON as the media type that is 
+being sent, and the third specifies the media type of the response. 
 ```
 ...
 --header 'api_key:test@gmail.com' \
