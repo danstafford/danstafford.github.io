@@ -19,7 +19,7 @@ To get the most out of this article, having some knowledge of these topics is he
 - Using the command line
 - A basic understanding of the four main parts of a [REST API](https://www.freecodecamp.org/news/rest-api-tutorial-rest-client-rest-service-and-api-calls-explained-with-code-examples/) request
   - The endpoint - this is the URL of the server where the resource is located
-  - The [HTTP request method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)) - GET, POST, DELETE, POST, etc.
+  - The [HTTP request method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) - GET, POST, DELETE, POST, etc.
   - The request headers - information included with the request or response such as an API key or response format
   - The request body (data) - additional data to be sent with the request
 
