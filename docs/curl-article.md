@@ -2,7 +2,7 @@
 
 Curl is a popular command-line tool used by software engineers and web developers worldwide.  Its main function is to 
 transfer data to and from a server.  This article provides an example API GET request and suggests a few formatting 
-options for the JSON response. 
+options for the JSON response.
 
 ## Why use curl?
 
@@ -213,10 +213,11 @@ The `--data` option includes the JSON data we are sending with this POST request
 
 ## Conclusion
 
-There is more to learn about using curl for testing API requests not covered here.  Please see the [references](#references) 
-below for links to the curl documentation as well as a small list of free APIs to use for learning. 
+Hopefully this article provided you with an introductory understanding of using curl for testing API requests. There is 
+much more to learn about using curl that is not covered here.  Please see the [additional resources](#additional-resources) 
+below some useful links and a small list of free APIs that are useful for testing API tools.
 
-## References
+## Additional resources
 
 - Curl manual [https://curl.se/docs/manpage.html](https://curl.se/docs/manpage.html)
 - Everything curl online book [https://everything.curl.dev/](https://everything.curl.dev/)
