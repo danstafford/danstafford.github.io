@@ -1,7 +1,7 @@
 # Using Curl for Testing API Requests
 
 Curl is a popular command-line tool that is used by software engineers and web developers worldwide.  Its main function is to 
-transfer data to and from a server.  This article provides a brief introduction to curl, an example API request, and 
+transfer data to and from a server.  This article provides a brief introduction to curl, an example REST API request, and 
 suggests a few formatting options for the JSON response.
 
 ## Why use curl?
@@ -17,9 +17,12 @@ some API testing products, there is no cost, signup, or extraneous functionality
 
 To get the most out of this article, having some knowledge of these topics is helpful:
 - Using the command-line
-- A basic understanding of [APIs](https://en.wikipedia.org/wiki/API)
-- [HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
-- [HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+- A basic understanding of the four main parts of a [REST API](https://www.freecodecamp.org/news/rest-api-tutorial-rest-client-rest-service-and-api-calls-explained-with-code-examples/) request
+  - The endpoint - this is the URL of the server where the resource is located
+  - The [HTTP request method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)) - GET, POST, DELETE, POST, etc.
+  - The request headers - information included with the request or response such as an API key or response format
+  - The request body (data) - additional data to be sent with the request
+
 
 ## Installation
 
