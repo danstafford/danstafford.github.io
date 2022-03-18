@@ -1,6 +1,6 @@
 # API Tutorials
 
-### [Javascript Fetch API](/javascript-fetch-api)
+### [Using the Javascript Fetch API](/javascript-fetch-api)
 
-### [Curl Article](/curl-article)
+### [Using Curl for Testing API Requests](/curl-article)
 

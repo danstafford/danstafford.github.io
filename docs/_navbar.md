@@ -1,3 +1,3 @@
 * [Home](/)
-* [Javascript Fetch API](/javascript-fetch-api)
-* [Curl Article](/curl-article)
+* [Using the Javascript Fetch API](/javascript-fetch-api)
+* [Using Curl for Testing APIs](/curl-article)
