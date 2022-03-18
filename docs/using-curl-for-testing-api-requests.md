@@ -1,6 +1,6 @@
 # Using Curl for Testing API Requests
 
-Curl is a popular command-line tool that is used by software engineers and web developers worldwide.  Its main function is to 
+Curl is a popular command line tool that is used by software engineers and web developers worldwide.  Its main function is to 
 transfer data to and from a server.  This article provides a brief introduction to curl, an example REST API request, and 
 suggests a few formatting options for the JSON response.
 
@@ -9,14 +9,14 @@ suggests a few formatting options for the JSON response.
 There are many API testing products such as [Postman](https://www.postman.com/), [Swagger](https://inspector.swagger.io/builder),
 and [Paw](https://paw.cloud/) that are easy to use, cleanly designed, and are full of features. Curl is 
 not a direct replacement for these products, but it is a useful tool that has some advantages. Using curl to 
-test API requests is fast and straightforward.  As a command-line tool, curl allows you to make an API 
+test API requests is fast and straightforward.  As a command line tool, curl allows you to make an API 
 request right from your computer and in a format that can easily can be copied and shared cross-platform. And unlike 
 some API testing products, there is no cost, signup, or extraneous functionality.
 
 ## Prerequisites
 
 To get the most out of this article, having some knowledge of these topics is helpful:
-- Using the command-line
+- Using the command line
 - A basic understanding of the four main parts of a [REST API](https://www.freecodecamp.org/news/rest-api-tutorial-rest-client-rest-service-and-api-calls-explained-with-code-examples/) request
   - The endpoint - this is the URL of the server where the resource is located
   - The [HTTP request method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)) - GET, POST, DELETE, POST, etc.
@@ -162,17 +162,19 @@ The standard output from all three of these formatting options will look somewha
 There are several other curl options that are useful when making API requests.  
 
 - The `--include` option includes the HTTP response headers with the output that is printed to the console.  This is useful for 
-receiving the HTTP status code of your request. 
+receiving the [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) of your request. 
 
 - The `--header` option allows extra headers to be included in the request.
 
 - The `--data` option specifies data to be included in the request. When using JSON as the media type make sure to include 
 the header `Content-Type: application/json` to indicate this.
 
+
   
 Here is an example curl command using the options described above.  As a side note, we are using a fictional endpoint in 
 this example. You may also notice we are using backslashes to break the command into multiple lines.  Using backslashes can help make a 
 curl command easier to read.
+
 ```
 curl --request POST 'https://example/v2/users' \
 --include \
@@ -224,7 +226,6 @@ below some useful links and a small list of free APIs that are useful for testin
 
 - Curl manual [https://curl.se/docs/manpage.html](https://curl.se/docs/manpage.html)
 - Everything curl online book [https://everything.curl.dev/](https://everything.curl.dev/)
-- HTTP response status codes [https://developer.mozilla.org/en-US/docs/Web/HTTP/Status](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 - Free APIs
   - [https://swapi.dev/](https://swapi.dev/)
   - [https://dictionaryapi.dev/](https://dictionaryapi.dev/)
