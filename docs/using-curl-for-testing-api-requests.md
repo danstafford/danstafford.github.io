@@ -7,15 +7,15 @@ suggests a few formatting options for the JSON response.
 ## Why use curl?
 
 There are many API testing products such as [Postman](https://www.postman.com/), [Swagger](https://inspector.swagger.io/builder),
-and [Paw](https://paw.cloud/) that are easy to use, cleanly designed, and are full of features. Curl is 
+and [Paw](https://paw.cloud/) that are easy to use, cleanly designed, and are full of useful features. Curl is 
 not a direct replacement for these products, but it is a useful tool that has some advantages. Using curl to 
 test API requests is fast and straightforward.  As a command line tool, curl allows you to make an API 
-request right from your computer and in a format that can easily can be copied and shared cross-platform. And unlike 
+request directly from your computer and in a format that can easily can be copied and shared cross-platform. And unlike 
 some API testing products, there is no cost, signup, or extraneous functionality.
 
 ## Prerequisites
 
-To get the most out of this article, having some knowledge of these topics is helpful:
+To get the most out of this article, having some knowledge of these topics is helpful.
 - Using the command line
 - A basic understanding of the four main parts of a [REST API](https://www.freecodecamp.org/news/rest-api-tutorial-rest-client-rest-service-and-api-calls-explained-with-code-examples/) request
   - The endpoint - this is the URL of the server where the resource is located
@@ -26,27 +26,27 @@ To get the most out of this article, having some knowledge of these topics is he
 
 ## Installation
 
-Most Linux, Mac, and newer Windows machines will have curl installed by default. To check if curl is installed on your 
+Most Mac, Linux, and newer Windows machines will have curl installed by default. To check if curl is installed on your 
 system, open the terminal or console, type this command, and press enter.
 ```
 curl -V
 ```
 
-After entering this command you should receive an output indicating which version of curl you currently have 
-installed.  If you did not receive a curl version number, please refer to the curl documentation to get it installed and running on 
-your machine [https://everything.curl.dev/get](https://everything.curl.dev/get) . 
+After entering this command you should receive an output indicating which version number of curl you currently have 
+installed.  If you did not receive a version number, please refer to the curl documentation for machine specific installation 
+instructions [https://everything.curl.dev/get](https://everything.curl.dev/get). 
 
 ## Create a GET request
 
-Here we will use curl to make a simple GET request to the [Dictionary API](https://dictionaryapi.dev/). The Dictionary API 
+Here is an example where we can use curl to make a GET request to the [Dictionary API](https://dictionaryapi.dev/). The Dictionary API 
 takes a word as a path parameter and returns a response with that word's definition, synonyms, antonyms, and more.
 
-This is a Dictionary API endpoint where the path parameter <word> is the english word you are requesting the definition for.  
+This is a Dictionary API endpoint where the path parameter `<word>` is the word you are requesting the definition for.  
 ```
 https://api.dictionaryapi.dev/api/v2/entries/en/<word>
 ```
 
-We can now create a curl command to get the definition of the word "quintessence".
+Here you can see a curl command where we get the definition of the word "quintessence".
 The command begins with `curl`, uses the `--request` option, and specifies that this is an HTTP `GET` request. 
 ```
 curl --request GET https://api.dictionaryapi.dev/api/v2/entries/en/quintessence
@@ -66,9 +66,9 @@ universe.","synonyms":[],"antonyms":[]}],"synonyms":[],"antonyms":[]},{"partOfSp
 ["https://en.wiktionary.org/wiki/quintessence"]}]
 ```
 
-## Formatting the results
+## Format the results
 
-The JSON response we have received back from the Dictionary API is formatted as a single line and is not in a very readable state.  When 
+The JSON response we have received back from the Dictionary API is formatted as a single line and not in a very readable state.  When 
 using curl there are several options available to format the results.  
 
 If you are using a Mac or certain Linux distributions, using the `json_pp` utility is a formatting option.
@@ -157,23 +157,21 @@ The standard output from all three of these formatting options will look somewha
 ```
 
 
-## Other useful curl options
+## Other curl options
 
-There are several other curl options that are useful when making API requests.  
+There are several other curl options that are often useful when making API requests.  
 
 - The `--include` option includes the HTTP response headers with the output that is printed to the console.  This is useful for 
 receiving the [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) of your request. 
 
 - The `--header` option allows extra headers to be included in the request.
 
-- The `--data` option specifies data to be included in the request. When using JSON as the media type make sure to include 
+- The `--data` option specifies data to be included in the request. When using JSON media type as the data, make sure to include 
 the header `Content-Type: application/json` to indicate this.
 
-
-  
-Here is an example curl command using the options described above.  As a side note, we are using a fictional endpoint in 
-this example. You may also notice we are using backslashes to break the command into multiple lines.  Using backslashes can help make a 
-curl command easier to read.
+Here is an example curl command using the three options described above.  As a side note, we are using a fictional endpoint in 
+this example. You may also notice we are using backslashes to break the command into multiple lines.  Using backslashes 
+can help make a curl command easier to read.
 
 ```
 curl --request POST 'https://example/v2/users' \
@@ -197,7 +195,7 @@ curl --request POST 'https://example/v2/users' \
 ```
 
 There are three instances of the `--header` option being used in this command. The first includes an API key, the second specifies JSON as the media type that is 
-being sent, and the third specifies the media type of the response. 
+being sent, and the third specifies JSON as the media type of the response. 
 ```
 ...
 --header 'api_key:test@gmail.com' \
@@ -216,16 +214,17 @@ The `--data` option includes the JSON data we are sending with this POST request
 }'
 ```
 
+
 ## Conclusion
 
 Hopefully this article provided you with an introductory understanding of using curl for testing API requests. There is 
 much more to learn about using curl that is not covered here.  Please see the [additional resources](#additional-resources) 
-below some useful links and a small list of free APIs that are useful for testing API tools.
+below for some useful links and a small list of free APIs that are useful for testing API tools.
 
 ## Additional resources
 
 - Curl manual [https://curl.se/docs/manpage.html](https://curl.se/docs/manpage.html)
-- Everything curl online book [https://everything.curl.dev/](https://everything.curl.dev/)
+- Curl online book [https://everything.curl.dev/](https://everything.curl.dev/)
 - Free APIs
   - [https://swapi.dev/](https://swapi.dev/)
   - [https://dictionaryapi.dev/](https://dictionaryapi.dev/)
