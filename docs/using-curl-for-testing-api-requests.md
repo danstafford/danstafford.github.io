@@ -7,7 +7,7 @@ suggests a few formatting options for the JSON response.
 ## Why use curl?
 
 There are many API testing products such as [Postman](https://www.postman.com/), [Swagger](https://inspector.swagger.io/builder),
-and [Paw](https://paw.cloud/) that are easy to use, cleanly designed, and are full of useful features. Curl is 
+and [Paw](https://paw.cloud/) that are easy to use, cleanly designed, and full of useful features. Curl is 
 not a direct replacement for these products, but it is a useful tool that has some advantages. Using curl to 
 test API requests is fast and straightforward.  As a command line tool, curl allows you to make an API 
 request directly from your computer and in a format that can easily can be copied and shared cross-platform. And unlike 
@@ -15,7 +15,7 @@ some API testing products, there is no cost, signup, or extraneous functionality
 
 ## Prerequisites
 
-To get the most out of this article, having some knowledge of these topics is helpful.
+To get the most out of this tutorial, having some knowledge of these topics is helpful.
 - Using the command line
 - A basic understanding of the four main parts of a [REST API](https://www.freecodecamp.org/news/rest-api-tutorial-rest-client-rest-service-and-api-calls-explained-with-code-examples/) request
   - The endpoint - this is the URL of the server where the resource is located
@@ -68,10 +68,10 @@ universe.","synonyms":[],"antonyms":[]}],"synonyms":[],"antonyms":[]},{"partOfSp
 
 ## Format the results
 
-The JSON response we have received back from the Dictionary API is formatted as a single line and not in a very readable state.  When 
+The JSON response we have received back from the Dictionary API is formatted in a single line and in not a very readable state.  When 
 using curl there are several options available to format the results.  
 
-If you are using a Mac or certain Linux distributions, using the `json_pp` utility is a formatting option.
+If you are using a Mac or certain Linux distributions, using the `json_pp` utility is one formatting option.
 ```
 curl --request GET https://api.dictionaryapi.dev/api/v2/entries/en/quintessence | json_pp
 ```
@@ -82,7 +82,7 @@ to format the response.
 curl --request GET https://api.dictionaryapi.dev/api/v2/entries/en/quintessence | python -m json.tool
 ```
 
-Finally, there is a JSON command line processor called [jq](https://stedolan.github.io/jq/), which also requires an installation, but has many formatting options.
+Finally, there is a JSON command line processor called [jq](https://stedolan.github.io/jq/), which requires an installation, but has many formatting options.
 ```
 curl --request GET https://api.dictionaryapi.dev/api/v2/entries/en/quintessence | jq '.'
 ```
@@ -159,7 +159,7 @@ The standard output from all three of these formatting options will look somewha
 
 ## Other curl options
 
-There are several other curl options that are often useful when making API requests.  
+There are several other curl options that are frequently used for API requests.  
 
 - The `--include` option includes the HTTP response headers with the output that is printed to the console.  This is useful for 
 receiving the [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) of your request. 
@@ -170,7 +170,7 @@ receiving the [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HT
 the header `Content-Type: application/json` to indicate this.
 
 Here is an example curl command using the three options described above.  As a side note, we are using a fictional endpoint in 
-this example. You may also notice we are using backslashes to break the command into multiple lines.  Using backslashes 
+this example. You may also notice the backslashes breaking the command into multiple lines.  Using backslashes 
 can help make a curl command easier to read.
 
 ```
@@ -186,7 +186,7 @@ curl --request POST 'https://example/v2/users' \
 }'
 ```
 
-On the first line of this curl command the `--request` option is used to specify that this is a `POST` request. It
+On the first line of this curl command the `--request` option is used and specifies that this is a `POST` request. It
 is followed by the `--include` option which displays the HTTP response headers.
 ```
 curl --request POST 'https://example/v2/users' \
@@ -217,7 +217,7 @@ The `--data` option includes the JSON data we are sending with this POST request
 
 ## Conclusion
 
-Hopefully this article provided you with an introductory understanding of using curl for testing API requests. There is 
+Hopefully this tutorial provided you with an introductory understanding of using curl for testing API requests. There is 
 much more to learn about using curl that is not covered here.  Please see the [additional resources](#additional-resources) 
 below for some useful links and a small list of free APIs that are useful for testing API tools.
 
