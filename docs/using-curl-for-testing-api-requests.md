@@ -17,7 +17,7 @@ some API testing products, there is no cost, signup, or extraneous functionality
 
 Knowledge of the following topics will be helpful before reading this article.
 - Using the command line
-- A basic understanding of the four main parts of a [REST API](https://www.freecodecamp.org/news/rest-api-tutorial-rest-client-rest-service-and-api-calls-explained-with-code-examples/) request
+- A basic understanding of the four main parts of a [REST API](https://www.freecodecamp.org/news/rest-api-tutorial-rest-client-rest-service-and-api-calls-explained-with-code-examples/) request:
   - The endpoint - this is the URL of the server where the resource is located
   - The [HTTP request method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) - GET, POST, DELETE, POST, etc.
   - The request headers - information included with the request or response such as an API key or response format
@@ -32,7 +32,7 @@ system, open the terminal or console, type this command, and press enter.
 curl -V
 ```
 
-After entering this command you should receive an output indicating which version number of curl you currently have 
+After entering this command, you should receive an output indicating which version number of curl you currently have 
 installed.  If you did not receive a version number, please refer to the curl documentation for machine specific installation 
 instructions [https://everything.curl.dev/get](https://everything.curl.dev/get). 
 
@@ -168,8 +168,8 @@ receiving the [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HT
 - The `--data` option specifies data to be included in the request. When JSON is the media type being used as the data, make sure to include 
 the header `Content-Type: application/json` to indicate this.
 
-Here is an example curl command using the three options described above.  As a side note, we are using a fictional endpoint in 
-this example. Please also notice the backslashes that break this command into multiple lines and make it easier to read.
+Here is an example curl command that uses the three options described above. This command makes a `POST` request to a 
+fictional endpoint. Please also notice the backslashes that break this command into multiple lines and make it easier to read.
 
 ```
 curl --request POST 'https://example/v2/users' \
@@ -215,9 +215,9 @@ The `--data` option includes the JSON data we are sending with this POST request
 
 ## Conclusion
 
-The goal of this article was to provide a first look at using curl for testing API requests. There is 
+The goal of this article was to provide an initial look at using curl for testing API requests. There is 
 much more to learn about this topic.  Please see the [additional resources](#additional-resources) 
-below for some useful links and a small list of free APIs that are useful for testing.
+below for a few curl links and a small list of free APIs that are useful for testing.
 
 ## Additional resources
 
