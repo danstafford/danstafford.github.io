@@ -7,7 +7,7 @@ few formatting options for the JSON response.
 ## Why use curl?
 
 Many API testing products such as [Postman](https://www.postman.com/), [Swagger](https://inspector.swagger.io/builder),
-and [Paw](https://paw.cloud/) are easy to use, cleanly designed, and full of valuable features. Curl is not a direct 
+and [RapidAPI](https://rapidapi.com/) are easy to use, cleanly designed, and full of valuable features. Curl is not a direct 
 replacement for these products, but it is a useful tool with some advantages. Using curl to test API requests is fast 
 and straightforward. As a command-line tool, curl allows API requests to be made directly from your computer and in a 
 format that can easily be copied and shared. Unlike some API testing products, there is no cost, signup, or extraneous functionality.
@@ -232,4 +232,5 @@ small list of helpful APIs for testing.
 - API testing products
   - [https://www.postman.com/](https://www.postman.com/)
   - [https://inspector.swagger.io/builder](https://inspector.swagger.io/builder)
+  - [https://rapidapi.com/](https://rapidapi.com/)
   - [https://paw.cloud/](https://paw.cloud/)
